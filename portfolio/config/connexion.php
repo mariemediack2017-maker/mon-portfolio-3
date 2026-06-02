@@ -1,7 +1,7 @@
 <?php
-$host = 'localhost';
-$db   = 'portfolio';
-$user = 'root';
+$host = 'sql104.infinityfree.com';
+$db = 'if0_41880865_portfolio';
+$user = 'if0_41880865';
 $pass = '';
 $charset = 'utf8mb4';
 
