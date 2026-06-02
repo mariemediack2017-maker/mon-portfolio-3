@@ -1,0 +1,247 @@
+/* --- IMPORTATION DE LA POLICE --- */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+
+:root {
+    --primary: #2980b9;
+    --secondary: #d6eaf8;
+    --accent: #f39c12;
+    --white: #ffffff;
+    --glow-blue: rgba(52, 152, 219, 0.8);
+}
+
+/* --- STRUCTURE GÉNÉRALE --- */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    background-color: #f4f7f6;
+    color: #333;
+}
+
+main {
+    max-width: 950px;
+    margin: 30px auto;
+    padding: 30px;
+    background-color: var(--white);
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+/* --- PHOTO & HALO LUMINEUX (Page Accueil) --- */
+.presentation img {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--white);
+    display: block;
+    margin: 0 auto 20px auto;
+    box-shadow: 0 0 25px var(--glow-blue);
+    /* Ta lumière bleue */
+}
+
+/* --- CAGES BLEUES AVEC EFFET DE MOUVEMENT --- */
+.presentation div:nth-of-type(2),
+section.projets div,
+section.experience div,
+.card {
+    background-color: var(--secondary);
+    border: 1px solid #aed6f1;
+    border-radius: 15px;
+    padding: 25px;
+    margin-top: 15px;
+    margin-bottom: 25px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* Prépare l'animation */
+}
+
+/* Effet au survol : la case "monte" et l'ombre s'agrandit */
+.presentation div:nth-of-type(2):hover,
+section.projets div:hover,
+section.experience div:hover,
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+    background-color: #ebf5fb;
+}
+
+/* --- ENTÊTE (HEADER) --- */
+header {
+    background-color: var(--primary);
+    color: var(--white);
+    padding: 40px 20px;
+    text-align: center;
+    border-bottom-left-radius: 60px;
+    border-bottom-right-radius: 60px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+header h2 {
+    font-size: 1.1rem;
+    font-weight: normal;
+    color: #ffffff;
+    margin-top: 10px;
+    border: none;
+    padding-left: 0;
+}
+
+/* --- NAVIGATION --- */
+nav {
+    margin-top: 20px;
+}
+
+nav a {
+    color: var(--white);
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: var(--accent);
+}
+
+/* --- TITRES --- */
+h2 {
+    color: var(--primary);
+    border-left: 5px solid var(--accent);
+    padding-left: 15px;
+    margin-top: 30px;
+}
+
+/* --- STYLE DES FORMULAIRES (Plus joli) --- */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 500px;
+    margin: 20px auto;
+}
+
+input,
+textarea {
+    padding: 12px;
+    border: 2px solid var(--secondary);
+    border-radius: 8px;
+    font-family: inherit;
+    outline: none;
+    transition: 0.3s;
+}
+
+input:focus,
+textarea:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 8px var(--glow-blue);
+}
+
+button {
+    padding: 12px 25px;
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: var(--accent);
+    transform: scale(1.05);
+}
+
+/* --- IMAGES PROJETS --- */
+.img-projet {
+    width: 250px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 15px;
+    margin: 15px 10px;
+    border: 3px solid white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.img-projet:hover {
+    transform: scale(1.08);
+}
+
+/* --- PIED DE PAGE (FOOTER) --- */
+footer {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: var(--primary);
+    color: var(--white);
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    margin-top: 50px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+footer h2 {
+    color: white;
+    border: none;
+    padding: 0;
+}
+
+.lien-mail,
+.lien-reseau {
+    color: var(--secondary);
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.lien-mail:hover,
+.lien-reseau:hover {
+    color: var(--accent);
+}
+
+/* --- RESPONSIVITÉ (TÉLÉPHONE) --- */
+@media (max-width: 768px) {
+    main {
+        width: 90%;
+        padding: 15px;
+        margin: 10px auto;
+    }
+
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    .img-projet {
+        width: 100%;
+        height: auto;
+        margin: 10px 0;
+    }
+
+    .competences {
+        display: block;
+    }
+
+    .card {
+        margin-bottom: 10px;
+    }
+
+    nav a {
+        display: inline-block;
+        margin: 5px 10px;
+    }
+}
+
+/* Mets ce code tout en bas de ton fichier style.css */
+header nav a.actif {
+    color: #f7f6f6 !important;
+    /* On met du ROUGE vif juste pour tester */
+    font-weight: 900 !important;
+    text-decoration: underline !important;
+    font-size: 1.2rem !important;
+    /* On l'agrandit pour être sûr de le voir */
+}
